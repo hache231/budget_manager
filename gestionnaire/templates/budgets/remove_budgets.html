@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Suppression d'un nouveau budget</title>
+</head>
+<body>
+    <h1>Suppression d'un nouveau budget</h1>
+    <p>Voulez-vous really supprimer ce budget ?</p>
+    <p>{{ budgets.budget }}</p>
+    <p>{{ budgets.description }}</p>
+    <p>{{ budgets.date_debut }}</p>
+    <p>{{ budgets.date_fin }}</p>
+    <form method="post">
+        {% csrf_token %}
+        <input type="submit" value="Supprimer">
+    </form>
+</body>
+</html>

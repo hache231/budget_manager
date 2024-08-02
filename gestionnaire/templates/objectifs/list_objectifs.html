@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Objectifs</title>
+</head>
+<body>
+    <h1>Liste des tous les objectifs</h1>
+    <a href="{% url 'add_objectifs' %}"><input type="button" value="Ajouter"></a>
+    <table class="table">
+        <tr>
+            <th>Libelle</th>
+            <th>Montant</th>
+            <th>Actions</th>
+        </tr>
+        {% for objectifs in objectifs %}
+        <tr>
+            <td>{{ objectifs.libelle }}</td>
+            <td>{{ objectifs.montant }}</td>
+            <td><a href="{% url 'update_objectifs' objectifs.id %}">Modifier</a> <a href="{% url 'remove_objectifs' objectifs.id %}">Supprimer</a></td>
+        </tr>
+        {% endfor %}
+    </table>
+</body>
+</html>

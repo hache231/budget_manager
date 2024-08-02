@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Depenses</title>
+</head>
+<body>
+    <h1>Liste des depenses</h1>
+    <a href="{% url 'add_depenses' %}"><input type="button" value="Ajouter"></a>
+    <table class="table">
+        <tr>
+            <th>Budget</th>
+            <th>Montant</th>
+            <th>Actions</th>
+        </tr>
+        {% for depenses in depenses %}
+        <tr>
+            <td>{{ depenses.budget }}</td>
+            <td>{{ depenses.montant }}</td>
+            <td><a href="{% url 'update_depenses' depenses.id %}">Modifier</a> <a href="{% url 'remove_depenses' depenses.id %}">Supprimer</a></td>
+        </tr>
+        {% endfor %}
+    </table>
+</body>
+</html>
