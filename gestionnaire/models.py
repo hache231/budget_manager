@@ -34,7 +34,7 @@ class Depenses(models.Model):
   date_modification = models.DateTimeField(auto_now=True)
 
   def __str__(self):
-    return self.montant
+    return str(self.montant)
   
 class Objectifs(models.Model):
   libelle = models.CharField(max_length=100)
