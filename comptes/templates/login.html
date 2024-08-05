@@ -1,17 +1,40 @@
 <!DOCTYPE html>
 <html lang="en">
+{% load static %}
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Login Page</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <link rel="stylesheet" href="{% static 'css/login.css' %}">
 </head>
 <body>
-    <h1>se connecter</h1>
-    <form method="post">
-        {% csrf_token %}
-        <input type="text" name="username">
-        <input type="password" name="password">
-        <button type="submit">Se connecter</button>
-    </form>
+    <div class="back">
+        <div class="div-center">
+          <div class="content">
+            <h3>Login</h3>
+            <hr />
+            <form method="POST">
+                {% csrf_token %}
+              <div class="form-group mb-2">
+                <label for="exampleInputEmail1">Nom d'utilisateur</label>
+                <input type="text" class="form-control" id="exampleInputEmail1" placeholder="username" name="username">
+              </div>
+              <div class="form-group mb-2">
+                <label for="exampleInputPassword1">Mot de passe</label>
+                <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Mot de passe" name="password">
+              </div>
+              <button type="submit" class="btn btn-primary">connexion</button>
+              <hr />
+              <button type="button" class="btn btn-link">Creer un compte</button>
+              <button type="button" class="btn btn-link">Mot de passe oublié</button>
+            </form>
+          </div>
+          </span>
+        </div>
+      </div>
+
+      <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.min.js" integrity="sha384-BBtl+eGJRgqQAUMxJ7pMwbEyER4l1g+O15P+16Ep7Q9Q+zqX6gSbd85u4mG4QzX+" crossorigin="anonymous"></script>
 </body>
 </html>
+
